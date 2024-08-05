@@ -1,0 +1,37 @@
+{
+  "name": "react-brazil-heatmap",
+  "version": "1.0.0",
+  "description": "A React component for displaying a heatmap of Brazil. Ideal for visualizing data distribution across Brazilian states or regions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gilsonlgd/react-brazil-heatmap.git"
+  },
+  "keywords": [
+    "brazil",
+    "brazil",
+    "heatmap",
+    "react-brazil-heatmap",
+    "brazil-heatmap",
+    "mapa-de-calor"
+  ],
+  "author": "Gilson Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gilsonlgd/react-brazil-heatmap/issues"
+  },
+  "homepage": "https://github.com/Gilsonlgd/react-brazil-heatmap#readme",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.4"
+  }
+}
