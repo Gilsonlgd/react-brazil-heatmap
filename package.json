@@ -4,7 +4,9 @@
   "description": "A React component for displaying a heatmap of Brazil. Ideal for visualizing data distribution across Brazilian states or regions.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\""
   },
   "repository": {
     "type": "git",
@@ -25,13 +27,24 @@
   },
   "homepage": "https://github.com/Gilsonlgd/react-brazil-heatmap#readme",
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "@eslint/compat": "^1.1.1",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.8.0",
+    "d3": "^7.9.0",
+    "globals": "^15.9.0",
+    "topojson-client": "^3.1.0"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.3",
     "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "tslib": "^2.6.3",
+    "@types/topojson-client": "^3.1.4",
+    "@typescript-eslint/eslint-plugin": "^8.0.1",
+    "@typescript-eslint/parser": "^8.0.1",
+    "eslint": "^9.8.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "typescript": "^5.5.4"
   }
 }
