@@ -4,7 +4,11 @@ import dts from "vite-plugin-dts";
 import libcss from "vite-plugin-libcss";
 
 export default defineConfig({
-  plugins: [react(), dts({ insertTypesEntry: true }), libcss()],
+  plugins: [
+    react(),
+    dts({ insertTypesEntry: true }),
+    libcss(),
+  ],
   build: {
     lib: {
       entry: "src/index.tsx",

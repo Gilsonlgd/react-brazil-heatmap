@@ -1,0 +1,13 @@
+.react-brazil-heatmap {
+  width: 100%;
+  height: 100%;
+  color: #2998ff;
+}
+
+.react-brazil-heatmap__state {
+  transition: all 0.3s;
+}
+
+.react-brazil-heatmap__state:hover {
+  opacity: 0.8;
+}
