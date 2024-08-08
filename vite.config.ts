@@ -4,11 +4,7 @@ import dts from "vite-plugin-dts";
 import libcss from "vite-plugin-libcss";
 
 export default defineConfig({
-  plugins: [
-    react(),
-    dts({ insertTypesEntry: true }),
-    libcss(),
-  ],
+  plugins: [react(), dts({ insertTypesEntry: true }), libcss()],
   build: {
     lib: {
       entry: "src/index.tsx",
@@ -16,7 +12,7 @@ export default defineConfig({
       fileName: (format) => `react-brazil-heatmap.${format}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", "react/jsx-runtime"],
+      external: ["react", "react-dom", "react/jsx-runtime", "react-dom/server"],
       output: {
         globals: {
           react: "React",

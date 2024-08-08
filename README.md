@@ -91,3 +91,7 @@ Please note that the `data` prop should be an object where the keys represent th
 ## Contributing
 We welcome contributions! If you have suggestions, bug reports, or want to add new features, please open an issue or submit a pull request.
 
+
+## Customizing
+- Se mudar a cor de fundo dos tooltips, é necessário mudar a cor das setas 
+
