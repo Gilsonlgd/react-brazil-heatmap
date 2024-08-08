@@ -20,8 +20,17 @@ export type Geography = {
   rsmKey: string;
 };
 
+export type MetaItem = {
+  [key: string]: string | number;
+};
+
+export type Metadata = {
+  [key: string]: MetaItem;
+};
+
 interface HeatmapBrazilProps {
   data: Record<string, number>;
+  metadata?: Metadata;
   colorRange?: [string, string];
   domain?: [number, number];
   tooltip?: {
@@ -32,10 +41,12 @@ interface HeatmapBrazilProps {
     position?: "top" | "right" | "bottom" | "left";
   };
   onClick?: (geo: Geography) => void;
+  tooltipContent?: (meta: MetaItem) => React.ReactNode;
 }
 
 function HeatmapBrazil({
   data,
+  metadata,
   domain,
   colorRange = ["#90caff", "#2998ff"],
   tooltip = {
@@ -45,6 +56,7 @@ function HeatmapBrazil({
     hideArrow: false,
     position: "top",
   },
+  tooltipContent,
 }: HeatmapBrazilProps): JSX.Element {
   const id = useId().replace(/:/g, "");
   const maxValue = Math.max(...Object.values(data));
@@ -53,7 +65,17 @@ function HeatmapBrazil({
     .range(colorRange);
 
   const getTooltipContent = (geoId: string): React.ReactNode => {
-    if (tooltip.show) {
+    if (tooltipContent && metadata) {
+      return (
+        <div
+          className={`react-brazil-heatmap__tooltip ${
+            tooltip.position || "top"
+          }`}
+        >
+          {tooltipContent(metadata[geoId])}
+        </div>
+      );
+    } else {
       return (
         <div
           className={`react-brazil-heatmap__tooltip ${
@@ -70,7 +92,6 @@ function HeatmapBrazil({
         </div>
       );
     }
-    return null;
   };
 
   return (
