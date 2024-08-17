@@ -1,11 +1,11 @@
 import React from "react";
 
 import type { MetaItem } from "src/types";
+import "./Tooltip.css";
 
 export type TooltipProps = {
   trigger?: "hover" | "click";
   float?: boolean;
-  hideArrow?: boolean;
   position?: "top" | "right" | "bottom" | "left";
   tooltipContent?: (meta: MetaItem) => React.ReactNode;
 };

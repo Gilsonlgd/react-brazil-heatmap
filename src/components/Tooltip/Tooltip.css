@@ -1,0 +1,56 @@
+.react-brazil-heatmap__tooltip {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+}
+
+.react-brazil-heatmap__tooltip.bottom::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid rgba(0, 0, 0, 0.7);
+  top: -7px;
+}
+
+.react-brazil-heatmap__tooltip.top::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid rgba(0, 0, 0, 0.7);
+  bottom: -7px;
+}
+
+.react-brazil-heatmap__tooltip.right::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 7px solid rgba(0, 0, 0, 0.7);
+  left: -7px;
+}
+
+/* Tooltip arrow right */
+.react-brazil-heatmap__tooltip.left::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid rgba(0, 0, 0, 0.7);
+  right: -7px;
+}
