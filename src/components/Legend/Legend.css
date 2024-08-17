@@ -14,6 +14,18 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
+.react-brazil-heatmap__legend .content-wrapper {
+  display: inherit;
+  flex-direction: inherit;
+  justify-content: inherit;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: inherit;
+  gap: inherit;
+}
+
 .react-brazil-heatmap__legend .legend-header {
   display: flex;
   font-size: 12px;

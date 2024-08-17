@@ -24,26 +24,28 @@ function Legend({
   );
   return (
     <div className={`react-brazil-heatmap__legend`}>
-      <div className="legend-header">{children}</div>
-      <div className="legend-body">
-        {legendValues.map((value, i) => (
-          <div key={i} className="legend-item">
-            <div
-              className="legend-color"
-              style={{
-                backgroundColor: colorScale!(value),
-              }}
-            ></div>
-            <span>
-              {formatter
-                ? formatter(value)
-                : value.toLocaleString(undefined, {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 2,
-                  })}
-            </span>
-          </div>
-        ))}
+      <div className="content-wrapper">
+        <div className="legend-header">{children}</div>
+        <div className="legend-body">
+          {legendValues.map((value, i) => (
+            <div key={i} className="legend-item">
+              <div
+                className="legend-color"
+                style={{
+                  backgroundColor: colorScale!(value),
+                }}
+              ></div>
+              <span>
+                {formatter
+                  ? formatter(value)
+                  : value.toLocaleString(undefined, {
+                      minimumFractionDigits: 0,
+                      maximumFractionDigits: 2,
+                    })}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
