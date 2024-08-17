@@ -6,7 +6,7 @@ import { Tooltip } from "react-tooltip";
 import { scaleLinear } from "d3-scale";
 
 import type { Geography as GeographyType, Metadata, MetaItem } from "./types";
-import { Tooltip as TT } from "./components";
+import { Tooltip as TT, Legend } from "./components";
 
 import brazilTopoJson from "./brazil-topojson.json";
 
@@ -50,6 +50,7 @@ function HeatmapBrazil({
   };
 
   const tooltipProps = TT.getTooltipProps(getChild(TT));
+  const legendProps = Legend.getLegendProps(getChild(Legend));
 
   const getTooltipContent = (geoId: string): React.ReactNode => {
     if (tooltipProps && metadata && tooltipProps.tooltipContent) {
@@ -83,15 +84,30 @@ function HeatmapBrazil({
 
   return (
     <div className="react-brazil-heatmap">
+      {legendProps && (
+        <Legend
+          domain={legendProps.domain || domain || [0, maxValue]}
+          colorScale={legendProps.colorScale || colorScale}
+          stepSize={legendProps.stepSize}
+          formatter={legendProps.formatter}
+        >
+          {legendProps.children}
+        </Legend>
+      )}
       <ComposableMap
-        className="w-100 h-100"
+        style={{
+          position: "absolute",
+          width: legendProps ? "95%" : "100%",
+          height: "100%",
+          right: "0",
+        }}
         projection="geoMercator"
         projectionConfig={{
           scale: 1100,
           center: [-54, -15],
         }}
       >
-        <Geographies geography={brazilTopoJson}>
+        <Geographies geography={brazilTopoJson} style={{ flexGrow: 1 }}>
           {({ geographies }: { geographies: GeographyType[] }) =>
             geographies.map((geo) => {
               const stateValue = data[geo.id] || 0;
