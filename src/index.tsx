@@ -96,16 +96,16 @@ function HeatmapBrazil({
       )}
       <ComposableMap
         style={{
-          position: "absolute",
           width: legendProps ? "95%" : "100%",
-          height: "100%",
-          right: "0",
+          height: "auto",
+          marginLeft: "auto",
         }}
         projection="geoMercator"
         projectionConfig={{
           scale: 1100,
           center: [-54, -15],
         }}
+        viewBox="0 -100 800 800"
       >
         <Geographies geography={brazilTopoJson} style={{ flexGrow: 1 }}>
           {({ geographies }: { geographies: GeographyType[] }) =>
