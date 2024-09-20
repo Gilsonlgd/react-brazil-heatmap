@@ -214,3 +214,6 @@ The legend component can be customized by overriding the following CSS classes:
 
 ## Contributing
 We welcome contributions! If you have suggestions, bug reports, or want to add new features, please open an issue or submit a pull request.
+
+## Acknowledgements
+This project was developed with the financial support of **Universidade Federal de Santa Maria (UFSM)**, in partnership with **INEP**, through a scholarship from the university. I would like to thank both institutions for their assistance and funding.

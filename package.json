@@ -1,6 +1,6 @@
 {
   "name": "react-brazil-heatmap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React component for displaying a heatmap of Brazil. Ideal for visualizing data distribution across Brazilian states or regions.",
   "main": "dist/react-brazil-heatmap.umd.js",
   "module": "dist/react-brazil-heatmap.es.js",
